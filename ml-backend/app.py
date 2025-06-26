@@ -24,7 +24,7 @@ def predict():
     filtered = data[data['job_title'].str.lower().str.contains(text)]
 
     # Return top 5 results
-    recommended = filtered.head(5).to_dict(orient="records")
+    recommended = filtered.head(100).to_dict(orient="records")
     return jsonify(recommended_jobs=recommended)
 
 if __name__ == "__main__":
